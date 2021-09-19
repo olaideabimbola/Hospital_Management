@@ -8,7 +8,7 @@ class window1:
     def __init__(self, master):
         self.master = master
         self.master.title('Hospital Management System')
-        self.master.geometry('700x500+250+100')
+        self.master.geometry('700x500+250+101')
         self.frame = Frame(self.master,bg ='#231441')
         self.frame.grid(padx=1)
         self.master.resizable(False, False)
