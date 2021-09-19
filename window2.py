@@ -5,7 +5,7 @@ class window2:
     def __init__(self, master2):
         self.master2 = master2
         self.master2.title('Patient Registration Page')
-        self.master2.geometry('1050x700+0+0')
+        self.master2.geometry('1050x700+200+0')
         self.p_frame = Frame(self.master2, bg ='#231441')
         self.p_frame.grid()
         self.master2.resizable(False, True)
@@ -21,10 +21,10 @@ class window2:
 
 
         # ====================================Frame=============================================#
-        self.p_login_frame1 = Frame(self.p_frame, width=1000)
+        self.p_login_frame1 = Frame(self.p_frame)
         self.p_login_frame1.grid()
         self.text1 = Label(self.p_login_frame1, text = 'Patient Registration System', bg = '#231441',fg='white',font=('arial','14','bold'), bd=20)
-        self.text1.grid(row=0, column=0)
+        self.text1.grid()
         self.p_login_frame2 = Frame(self.p_frame, width=1000, height=500, bd=8, relief='ridge')
         self.p_login_frame2.grid(row=1, column=0)
                     #-------------inner frame-----------#
@@ -33,7 +33,7 @@ class window2:
         self.inner2_frame2 = Frame(self.p_login_frame2, width=700, height=500, bd=5)
         self.inner2_frame2.grid(row=0, column=1)
                                  #-------------sub_inner1 frame---------#
-        self.sub_inn_frame1 = LabelFrame(self.inner1_frame2, text='Customer Name', width=300, height=490, bd=8, relief='ridge')
+        self.sub_inn_frame1 = LabelFrame(self.inner1_frame2, text='Customer Name', width=300, height=500, bd=8, relief='ridge')
         self.sub_inn_frame1.grid()
         self.sub_inn_frame1.grid_propagate(0)
                                 # -------------sub_inner2 frame---------#
