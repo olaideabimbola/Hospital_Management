@@ -11,6 +11,7 @@ class window1:
         self.master.geometry('800x750+0+0')
         self.frame = Frame(self.master)
         self.frame.grid()
+        self.master.resizable(False, True)
 
         self.label_title = Label(self.frame, text = 'Pharmacy Management System', font=('arial',30,'bold'), bd=20)
         self.label_title.grid(row=0, column=0, columnspan=2, pady=40)
