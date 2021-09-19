@@ -46,7 +46,7 @@ class window2:
                                      text='Reference No.\t First Name\t Surname\t\t Address\t\t Telephone No \t Post Code')
         self.display_details.grid( pady=10, padx=15, columnspan=4)
 
-        self.textReceipt = Text(self.sub_inn_frame2, font=('arial','9','bold'), width=97, height=30)
+        self.textReceipt = Text(self.sub_inn_frame2, font=('arial','9','bold'), width=97, height=25, bg='white', state='disabled')
         self.textReceipt.grid(row=1, column=0, columnspan=4)
         #=======================#
 
@@ -89,7 +89,12 @@ class window2:
         #===================================Function Declaration====================================#
 
     def submit(self):
-            self.textReceipt.insert(END, "\t" + self.VrefNo.get())
+        self.textReceipt.config(state='normal')
+        self.textReceipt.insert(END, "\t" + self.VrefNo.get())
+        self.textReceipt.config(state='disabled')
+        self.textReceipt.bind("<Button>", lambda event: self.textReceipt.focus_set())
+
+
 
 
 
