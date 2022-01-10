@@ -1,22 +1,24 @@
 from tkinter import *
 import tkinter.messagebox
 
+
+
+
+
 class window1:
     def __init__(self, master):
         self.master = master
         self.master.title('Hospital Management System')
         self.master.geometry('700x500+250+101')
-        self.frame = Frame(self.master,bg ='#231441')
-        self.frame.grid(padx=1)
         self.master.resizable(False, False)
 
         #==========================first frame==================#
-        self.first_frame = Frame(self.frame)
+        self.first_frame = Frame(self.master)
         self.first_frame.grid(row=0,column=0,padx=20)
         self.text1 = Label(self.first_frame, text='Hospital Management System', bg='#231441', fg='white',font=('arial','14','bold'),bd=10)
         self.text1.grid()
         #===========================second frame=================#
-        self.sec_frame = Frame(self.frame, width=650, height=430, bd=7, relief='ridge')
+        self.sec_frame = Frame(self.master, width=650, height=430, bd=7, relief='ridge')
         self.sec_frame.grid(row=1, column=0, padx=20)
         self.sec_frame.grid_propagate(0)
         self.login_frame1 = Frame(self.sec_frame, bd=10, relief='ridge')
@@ -125,11 +127,13 @@ class window3:
         self.text1.grid()
         self.p_login_frame2 = Frame(self.p_frame, width=1100, height=500, bd=8, relief='ridge')
         self.p_login_frame2.grid(row=1, column=0)
+
                     #-------------inner frame-----------#
         self.inner1_frame2 = LabelFrame(self.p_login_frame2, width=300, height=500, bd=5)
         self.inner1_frame2.grid(row=0, column=0)
         self.inner2_frame2 = Frame(self.p_login_frame2, width=800, height=500, bd=5)
         self.inner2_frame2.grid(row=0, column=1)
+
                                  #-------------sub_inner1 frame---------#
         self.sub_inn_frame1 = LabelFrame(self.inner1_frame2, text='Customer Name', width=300, height=500, relief='ridge')
         self.sub_inn_frame1.grid()
@@ -139,6 +143,7 @@ class window3:
         self.sub_inn_frame2.grid()
         self.sub_inn_frame2.grid_propagate(0)
         # =======================================================================================#
+
         #sub inner frame datails
         self.display_details = Label(self.sub_inn_frame2, font=('arial','9','bold'),text='Reference No').grid(row =0, column=0, pady=10)
         self.display_details = Label(self.sub_inn_frame2, font=('arial','9','bold'),text='First Name').grid(row=0,column=1, pady=10)
@@ -166,11 +171,6 @@ class window3:
         self.textReceiptTN.grid(row=1, column=5)
 
 
-
-
-
-
-
         #=======================#
         self.refNo = Label(self.sub_inn_frame1, text = 'Reference No.', font=('arial', 10))
         self.refNo.grid(row=0, column=0, pady=10, sticky=W)
@@ -179,27 +179,27 @@ class window3:
 
         self.fName = Label(self.sub_inn_frame1, text = 'First Name.', font=('arial', 10))
         self.fName.grid(row=1, column=0, sticky=W,pady=10)
-        self.fName_entry =Entry(self.sub_inn_frame1, font=('arial', 10, 'bold'), bd=4, insertwidth=2,textvariable=self.VfName)
+        self.fName_entry =Entry(self.sub_inn_frame1, font=('arial', 10), bd=4, insertwidth=2,textvariable=self.VfName)
         self.fName_entry.grid(row=1, column=1, padx=10)
 
         self.lName = Label(self.sub_inn_frame1, text = 'Surname.', font=('arial', 10))
         self.lName.grid(row=2, column=0, sticky=W,pady=10)
-        self.lName_entry =Entry(self.sub_inn_frame1, font=('arial', 10, 'bold'), bd=4, insertwidth=2,textvariable=self.VlName)
+        self.lName_entry =Entry(self.sub_inn_frame1, font=('arial', 10), bd=4, insertwidth=2,textvariable=self.VlName)
         self.lName_entry.grid(row=2, column=1, padx=10)
 
         self.addr = Label(self.sub_inn_frame1, text = 'Address.', font=('arial', 10))
         self.addr.grid(row=3, column=0, sticky=W,pady=10)
-        self.addr_entry =Entry(self.sub_inn_frame1, font=('arial', 10, 'bold'), bd=4, insertwidth=2,textvariable=self.Vaddr)
+        self.addr_entry =Entry(self.sub_inn_frame1, font=('arial', 10), bd=4, insertwidth=2,textvariable=self.Vaddr)
         self.addr_entry.grid(row=3, column=1, padx=10)
 
         self.pCode = Label(self.sub_inn_frame1, text = 'Postcode', font=('arial', 10))
         self.pCode.grid(row=4, column=0, sticky=W, pady=10)
-        self.pCode_entry =Entry(self.sub_inn_frame1, font=('arial', 10, 'bold'), bd=4, insertwidth=2,textvariable=self.VpCode)
+        self.pCode_entry =Entry(self.sub_inn_frame1, font=('arial', 10), bd=4, insertwidth=2,textvariable=self.VpCode)
         self.pCode_entry.grid(row=4, column=1, padx=10)
 
         self.telNo = Label(self.sub_inn_frame1, text ='Telephone No.', font=('arial', 10))
         self.telNo.grid(row=5, column=0, sticky=W,pady=10)
-        self.telNo_entry =Entry(self.sub_inn_frame1, font=('arial', 10, 'bold'), bd=4, insertwidth=2,textvariable=self.VtelNo)
+        self.telNo_entry =Entry(self.sub_inn_frame1, font=('arial', 10), bd=4, insertwidth=2,textvariable=self.VtelNo)
         self.telNo_entry.grid(row=5, column=1, padx=10)
             #-------------------------------------------------#
         self.submitbtn1 = Button(self.sub_inn_frame1, text='Submit',font=('arial',10,'bold'),
@@ -209,13 +209,6 @@ class window3:
         #===================================Function Declaration====================================#
 
     def submit(self):
-        patien_Vref = self.VrefNo.get()
-        patien_fName = self.VfName.get()
-        patien_lName = self.VlName.get()
-        patien_addr = self.Vaddr.get()
-        patien_pCode = self.VpCode.get()
-        patien_telNO = self.VtelNo.get()
-
         self.textReceiptRN.config(state = 'normal')
         self.textReceiptRN.insert(END, self.VrefNo.get())
         self.textReceiptRN.insert(END, "\n")
@@ -260,12 +253,12 @@ class window3:
             #self.textReceipt.config(state='disabled')
             #self.textReceipt.bind("<Button>", lambda event: self.textReceipt.focus_set())
     def reset(self):
-        self.refNo_entry.delete(0, END)
+        self.refNo_entry.delete(0,END)
         self.fName_entry.delete(0, END)
         self.lName_entry.delete(0, END)
         self.addr_entry.delete(0, END)
         self.pCode_entry.delete(0, END)
-        self.telNo_entry.delete(0, END);
+        self.telNo_entry.delete(0, END)
 
 
 
