@@ -91,7 +91,6 @@ class window1:
             self.username.set("")
             self.password.set("")
             self.txt_username.focus()
-
         # ============+=========================================================================================#
 
     def Registration_window(self):
